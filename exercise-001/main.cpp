@@ -3,6 +3,10 @@
 
 #include "config.h"
 
+void changeValueByParameter(int value){
+    value = 99;
+    fmt::print("{}\n",value);
+}
 auto main(int argc, char **argv) -> int
 {
 
@@ -15,5 +19,18 @@ auto main(int argc, char **argv) -> int
 
     /* INSERT YOUR CODE HERE */
 
+    int x = 10;
+    int& r = x;
+    fmt::print("{}\n",x);
+    fmt::print("{}\n",r);
+    r = 42;
+    fmt::print("{}\n",x);
+    fmt::print("{}\n",r);
+    changeValueByParameter(x);
+    changeValueByParameter(r);
+    fmt::print("{}\n",x);
+    fmt::print("{}\n",r);   
+    
+    
     return 0; /* exit gracefully*/
 }
