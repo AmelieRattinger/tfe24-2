@@ -42,5 +42,10 @@ auto main(int argc, char **argv) -> int
     Point p2;           // Standardkonstruktor -> (0, 0)
     p2.print();         // Ausgabe: (0, 0)
 
+    
+    double dist = p1.distance_to(p2);
+    fmt::print("Abstand zwischen p1 und p2: {:.2f}\n", dist);
+
+
     return 0; /* exit gracefully*/
 }

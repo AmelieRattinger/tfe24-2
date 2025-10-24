@@ -12,6 +12,7 @@ public:
 
     void move(double dx, double dy); // Methode zum Verschieben
     void print() const;              // Methode zur Ausgabe
+    double distance_to(const Point& other) const; // Abstandsmethode
 private:
     double m_x;
     double m_y;
