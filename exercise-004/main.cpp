@@ -4,6 +4,9 @@
 #include "CLI/CLI.hpp"
 #include "config.h"
 
+#include "point.hpp"
+#include "point.hpp"
+
 auto main(int argc, char **argv) -> int
 {
     /**
@@ -29,6 +32,20 @@ auto main(int argc, char **argv) -> int
     fmt::print("Hello, {}!\n", app.get_name());
 
     /* INSERT YOUR CODE HERE */
+
+    Point p1(2, 3);     // Erzeugen eines Punktes (2, 3)
+    p1.print();         // Ausgabe: (2, 3)
+
+    p1.move(1, -1);     // Verschiebe um (1, -1)
+    p1.print();         // Ausgabe: (3, 2)
+
+    Point p2;           // Standardkonstruktor -> (0, 0)
+    p2.print();         // Ausgabe: (0, 0)
+
+    
+    double dist = p1.distance_to(p2);
+    fmt::print("Abstand zwischen p1 und p2: {:.2f}\n", dist);
+
 
     return 0; /* exit gracefully*/
 }
