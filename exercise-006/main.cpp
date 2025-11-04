@@ -6,6 +6,10 @@
 #include "CLI/CLI.hpp"
 #include "config.h"
 
+#include "point.hpp"
+#include "point_fmt.hpp"
+
+
 // for convenience
 using json = nlohmann::json;
 
@@ -34,6 +38,17 @@ auto main(int argc, char **argv) -> int
     fmt::print("Hello, {}!\n", app.get_name());
 
     /* INSERT YOUR CODE HERE */
+    Point<int> p1(3, 4);
+    Point<int> p2(0, 0);
+
+    fmt::print("Punkt 1: {}\n", p1);
+    fmt::print("Punkt 2: {}\n", p2);
+
+    auto dist = p1.distance_to(p2);
+    fmt::print("Distanz zwischen Punkt 1 und Punkt 2: {:.2f}\n", dist);
+
+    p1.move(1, -2);
+    fmt::print("Punkt 1 nach Verschiebung: {}\n", p1);
 
     return 0; /* exit gracefully*/
 }
