@@ -8,14 +8,12 @@
 
 int main(int argc, char** argv) {
     int N = 10;
-    double growth = 2.0;
 
     CLI::App app{"myvector demo"};
     app.add_option("-n,--count", N, "Anzahl der Inserts");
-    app.add_option("-g,--growth", growth, "Wachstumsfaktor");
     CLI11_PARSE(app, argc, argv);
 
-    fmt::println("Running with N={} growth={}", N, growth);
+    fmt::println("Running with N={}", N);
 
     tfe24::myvector<int> vec;
     for (int i = 0; i < N; ++i) {
